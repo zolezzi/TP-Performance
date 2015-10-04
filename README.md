@@ -24,7 +24,6 @@ El listado de Máximos Salarios no funciona con el volumen de datos, hacerlo and
 
 Se deben cargar todos los datos en la base de datos. Para hacerlo hacer lo siguiente:
 
-1. Descomprimir el rar employees_db-final-1.0 que esta en `src/main/resources`
-2. Dentro de la carpeta ejecutar `mysql -u root --password=root -t < employees.sql`
-3. Cambiando la password del usuario root del mysql.
-4. Se debería haber generado el schema employees.
+1. Descomprimir el tar.bz employees_db que esta en `src/main/resources` (tar -xvjf employees_db-final-1.0.6.tar.bz)
+2. Dentro de la carpeta ejecutar `mysql -uroot -proot -t < employees.sql`
+3. Se debería haber generado la base de datos employees.
