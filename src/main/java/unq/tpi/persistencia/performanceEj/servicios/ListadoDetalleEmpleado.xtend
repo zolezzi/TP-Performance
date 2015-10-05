@@ -5,8 +5,8 @@ import unq.tpi.persistencia.performanceEj.daos.EmployeeDAO
 class ListadoDetalleEmpleado extends AbstractListado {
 	int num
 
-	new(int num) {
-		super("./target/DetalleEmpleado-" + num + ".csv")
+	new(String fileName, int num) {
+		super(fileName)
 		this.num = num
 	}
 

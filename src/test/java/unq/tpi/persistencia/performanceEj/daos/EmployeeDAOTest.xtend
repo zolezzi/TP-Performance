@@ -1,4 +1,4 @@
-package unq.tpi.persistencia;
+package unq.tpi.persistencia.performanceEj.daos;
 
 import java.text.SimpleDateFormat
 import org.junit.Assert
@@ -7,7 +7,7 @@ import unq.tpi.persistencia.performanceEj.daos.EmployeeDAO
 import unq.tpi.persistencia.performanceEj.model.Gender
 import unq.tpi.persistencia.util.SessionManager
 
-class EmployeeTest {
+class EmployeeDAOTest {
 
 	@Test
 	def void testFields() throws Exception {

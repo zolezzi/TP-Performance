@@ -1,11 +1,11 @@
-package unq.tpi.persistencia;
+package unq.tpi.persistencia.performanceEj.daos;
 
 import org.junit.Assert
 import org.junit.Test
 import unq.tpi.persistencia.performanceEj.daos.DepartmentDAO
 import unq.tpi.persistencia.util.SessionManager
 
-class DepartmentTest {
+class DepartmentDAOTest {
 
 	@Test
 	def void testFields() throws Exception {

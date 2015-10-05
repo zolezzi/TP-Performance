@@ -4,8 +4,8 @@ import unq.tpi.persistencia.performanceEj.daos.DepartmentDAO
 
 class ListadoDeptos extends AbstractListado {
 
-	new() {
-		super("./target/Deptos.csv")
+	new(String fileName) {
+		super(fileName)
 	}
 
 	override doListado() throws Exception {

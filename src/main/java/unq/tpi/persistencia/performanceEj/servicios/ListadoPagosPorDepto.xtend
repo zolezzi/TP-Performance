@@ -6,8 +6,8 @@ class ListadoPagosPorDepto extends AbstractListado {
 
 	String num
 
-	new(String num) {
-		super("./target/PagosPorDepto.csv")
+	new(String fileName, String num) {
+		super(fileName)
 		this.num = num
 	}
 
