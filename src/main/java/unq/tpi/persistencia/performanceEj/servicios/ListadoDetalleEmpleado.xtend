@@ -1,20 +1,13 @@
 package unq.tpi.persistencia.performanceEj.servicios
 
 import unq.tpi.persistencia.performanceEj.daos.EmployeeDAO
-import java.util.Date
-import java.text.SimpleDateFormat
 
 class ListadoDetalleEmpleado extends AbstractListado {
+	int num
 
-	private int num
-	
 	new(int num) {
-		super()
+		super("./target/DetalleEmpleado-" + num + ".csv")
 		this.num = num
-	}
-
-	override String getFilename() {
-		return "./target/DetalleEmpleado-" + num +  ".csv"
 	}
 
 	override doListado() throws Exception {
@@ -39,12 +32,6 @@ class ListadoDetalleEmpleado extends AbstractListado {
 		]
 	}
 
-	def addColumn(Date date) {
-		try {
-			this.addColumn(new SimpleDateFormat("dd-MM-yyyy").format(date))
-		} catch (Exception e) {
-			throw new RuntimeException(e)
-		}
-	}
+	
 
 }

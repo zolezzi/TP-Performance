@@ -4,15 +4,16 @@ import unq.tpi.persistencia.performanceEj.daos.DepartmentDAO
 
 class ListadoDeptos extends AbstractListado {
 
-	override String getFilename() {
-		return "./target/Deptos.csv"
+	new() {
+		super("./target/Deptos.csv")
 	}
 
 	override doListado() throws Exception {
-		val deptos = new DepartmentDAO().getAll()
 		this.addColumn("Codigo").addColumn("Nombre").addColumn("Manager").newLine()
+		
+		val deptos = new DepartmentDAO().getAll()
 		deptos.forEach[
-			addColumn(it.number)
+			addColumn(it.code)
 			addColumn(it.name)
 			addColumn(it.manager.fullName)
 			newLine()

@@ -1,29 +1,24 @@
 package unq.tpi.persistencia.performanceEj.servicios
 
 import unq.tpi.persistencia.performanceEj.daos.DepartmentDAO
-import unq.tpi.persistencia.performanceEj.model.Department
 
 class ListadoPagosPorDepto extends AbstractListado {
 
 	String num
-	Department depto = null
 
 	new(String num) {
+		super("./target/PagosPorDepto.csv")
 		this.num = num
 	}
 
 	override def doListado() throws Exception {
-		depto = new DepartmentDAO().getByCode(num)
+		val depto = new DepartmentDAO().getByCode(this.num)
 
 		newLine()
 		addColumn("Total").addColumn(depto.totalSalaries).newLine()
 		newLine()
 		
-		addColumn("Nombre")
-		addColumn("Titulo")
-		addColumn("Monto")
-		newLine()
-
+		addColumn("Nombre").addColumn("Titulo").addColumn("Monto").newLine()
 		depto.employees.forEach[
 			addColumn(it.fullName)
 			addColumn(it.title)
@@ -31,8 +26,5 @@ class ListadoPagosPorDepto extends AbstractListado {
 			newLine()
 		]
 	}
-
-	override def getFilename() {
-		"./target/PagosPorDepto.csv"
-	}
+	
 }

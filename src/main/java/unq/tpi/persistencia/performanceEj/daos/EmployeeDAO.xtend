@@ -9,7 +9,8 @@ class EmployeeDAO {
 	def getByName(String name, String lastName) {
 		val session = SessionManager.getSession()
 		session.createQuery("from Employee where firstName = :name and lastName = :lastName")
-				.setParameter("name", name).setParameter("lastName", lastName)
+				.setParameter("name", name)
+				.setParameter("lastName", lastName)
 				.uniqueResult() as Employee
 	}
 

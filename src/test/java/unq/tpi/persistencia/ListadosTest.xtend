@@ -10,22 +10,22 @@ class ListadosTest {
 	
 	@Test
 	def void testListadoPagosPorDepto() {
-		new ListadoPagosPorDepto("d007").listado();
+		new ListadoPagosPorDepto("d007").generarListado();
 	}
 	
 	@Test
 	def void testListadoDeptos(){
-		new ListadoDeptos().listado();
+		new ListadoDeptos().generarListado();
 	}
 	
 	@Test
 	def void testListadoMaximosSalarios() {
-		new ListadoMaximosSalarios().listado();
+		new ListadoMaximosSalarios().generarListado();
 	}
 	
 	@Test
 	def void testDetalleEmpleado() {
-		new ListadoDetalleEmpleado(10010).listado();
-		new ListadoDetalleEmpleado(10019).listado();
+		new ListadoDetalleEmpleado(10010).generarListado();
+		new ListadoDetalleEmpleado(10019).generarListado();
 	}
 }

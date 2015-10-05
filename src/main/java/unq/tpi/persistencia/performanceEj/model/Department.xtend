@@ -8,7 +8,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 public class Department {
-	String number
+	String code
 	String name
 	Set<Employee> employees = new HashSet
 	Set<Employee> historicEmployees = new HashSet

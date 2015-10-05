@@ -3,41 +3,33 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="unq.tpi.persistencia.performanceEj.model.Department"
-		table="departments">
-		<id name="number">
+	<class name="unq.tpi.persistencia.performanceEj.model.Department" table="departments">
+		<id name="code">
 			<column name="dept_no" sql-type="char(4)" />
-			<generator class="identity" />
+			<generator class="assigned" />
 		</id>
 
-		<property name="name">
-			<column name="dept_name" />
-		</property>
+		<property name="name" column="dept_name" />
 
 		<set name="employees" table="dept_emp" where="to_date = '9999-01-01'" lazy="false" fetch="join">
 			<key>
-				<column name="dept_no" sql-type="char(4)"></column>
+				<column name="dept_no" sql-type="char(4)" />
 			</key>
-			<many-to-many column="emp_no"
-				class="unq.tpi.persistencia.performanceEj.model.Employee" />
+			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</set>
 
 		<set name="historicEmployees" table="dept_emp" where="to_date != '9999-01-01'">
 			<key>
-				<column name="dept_no" sql-type="char(4)"></column>
+				<column name="dept_no" sql-type="char(4)" />
 			</key>
-
-			<many-to-many column="emp_no"
-				class="unq.tpi.persistencia.performanceEj.model.Employee" />
+			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</set>
 
 		<bag name="managers" table="dept_manager" order-by="from_date">
 			<key>
-				<column name="dept_no" sql-type="char(4)"></column>
+				<column name="dept_no" sql-type="char(4)" />
 			</key>
-			<many-to-many column="emp_no"
-				class="unq.tpi.persistencia.performanceEj.model.Employee" />
+			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</bag>
-
 	</class>
 </hibernate-mapping>
