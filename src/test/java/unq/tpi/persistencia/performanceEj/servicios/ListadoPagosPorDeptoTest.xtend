@@ -2,7 +2,7 @@ package unq.tpi.persistencia.performanceEj.servicios;
 
 import org.junit.Test
 
-class ListadosDeptosTest extends BaseListadoTest {
+class ListadoPagosPorDeptoTest extends BaseListadoTest {
 
 	@Test
 	def void testListadoPagosPorDepto() {
