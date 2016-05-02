@@ -12,8 +12,8 @@ class ListadoMaximosSalarios extends AbstractListado {
 	}
 
 	override def doListado() throws Exception {
-		/*
 		 
+		/*
 		// Trae todos los empleados y los ordena descendientemente por sueldo
 		val empleados = new EmployeeDAO().getAllEmployeeWithName_Salary()
 		empleados.sort(new Comparator<Employee>() {
@@ -33,14 +33,12 @@ class ListadoMaximosSalarios extends AbstractListado {
 		// Trae todos los empleados y los ordena descendientemente por sueldo
 		val  empleados = new EmployeeDAO().getAllEmployeeWithName_Salary()
 
- /*
   
 		// Imprime el sueldo de los 10 primeros empleados en la coleccion		
 		addColumn("Nombre").addColumn("Sueldo").newLine()
 		empleados.forEach[ e |
-			addColumn(e.fullName).addColumn(e.salary).newLine()
+			addColumn(e.fullName).addColumn(e.amount).newLine()
 		]
-  */
  
 		 
 	}

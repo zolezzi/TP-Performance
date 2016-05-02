@@ -45,7 +45,7 @@
 			<element column="title" type="java.lang.String" />
 		</bag>
 		
-		<bag name="salaries" order-by="from_date" lazy="false" fetch="join">
+		<bag name="salaries" order-by="from_date" lazy="true" fetch="join">
 			<key column="emp_no" />
 			<one-to-many class="unq.tpi.persistencia.performanceEj.model.Salary" />
 		</bag>

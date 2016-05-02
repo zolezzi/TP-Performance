@@ -28,7 +28,12 @@ class EmployeeDAO {
 	
 	def getAllEmployeeWithName_Salary(){
 		val session = SessionManager.getSession()
-		session.createQuery("select employee.firstName, employee.lastName, max(employee.salaries)[0] from Employee as employee").setResultTransformer(Transformers.aliasToBean(ResultadosSalariosMaximo)).list() as List<ResultadosSalariosMaximo>;
+		session.createQuery("select employee.firstName as firstName, employee.lastName as lastName, salary.amount as amount 
+								from Employee as employee 
+								join employee.salaries as salary
+								order by salary.amount desc ")
+								.setResultTransformer(Transformers.aliasToBean(ResultadosSalariosMaximo))
+								.setMaxResults(10).list() as List<ResultadosSalariosMaximo>;
 	}
 
 }
