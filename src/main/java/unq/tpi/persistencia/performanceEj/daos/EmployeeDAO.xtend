@@ -31,7 +31,7 @@ class EmployeeDAO {
 		session.createQuery("select employee.firstName as firstName, employee.lastName as lastName, salary.amount as amount 
 								from Employee as employee 
 								join employee.salaries as salary
-								where salary.to = '9999-01-01' 
+								where salary.to = '9999-01-01'
 								order by salary.amount desc
 								")
 								.setResultTransformer(Transformers.aliasToBean(ResultadosSalariosMaximo))
