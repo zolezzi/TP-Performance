@@ -21,7 +21,7 @@
 			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</set>
 
-		<bag name="managers" table="dept_manager" order-by="from_date">
+		<bag name="managers" table="dept_manager" order-by="to_date" where="to_date = '9999-01-01'">
 			<key column="dept_no"/>
 			<many-to-many column="emp_no" class="unq.tpi.persistencia.performanceEj.model.Employee" />
 		</bag>
