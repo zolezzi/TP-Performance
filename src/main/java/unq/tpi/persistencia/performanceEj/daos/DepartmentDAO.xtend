@@ -16,10 +16,12 @@ class DepartmentDAO {
 		val session = SessionManager.getSession()
 		session.get(Department, num) as Department
 	}
-
+    
+    //join fetch
 	def getAll() {
 		val session = SessionManager.getSession()
 		session.createCriteria(Department).list() as List<Department>
 	}
+	
 
 }
